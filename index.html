@@ -53,7 +53,6 @@
   // ---- Read params passed from Flutter ----
   var params = new URLSearchParams(window.location.search);
    var videoId = params.get('id') || params.get('videoId') || '';
-
   var isShorts = params.get('isShorts') === 'true' || params.get('isShorts') === '1';
 
   // ---- Size the player box to fit the viewport while keeping the right aspect ratio ----
