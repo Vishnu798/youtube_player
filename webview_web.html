@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Webview Web</h1>
+    <button onclick="callFlutterChannel();">Call Flutter Channel</button>
+</body>
+<script>
+    function returnSomeValues(){
+        return "Some values";
+    }
+    function changeBackgroundColor(color){
+        document.body.style.backgroundColor = color;
+    }
+    function callFlutterChannel(){
+        // console.log("calling channel")
+        // if (window.FlutterTest === 'undefined') {
+        //     // The native JavaScript channel binds to the page a moment after
+        //     // load, so a click right after the page appears can race ahead
+        //     // of it. Retry briefly instead of throwing.
+        //     console.warn("FlutterTest channel not ready yet, retrying...");
+        //     setTimeout(callFlutterChannel, 200);
+        //     return;
+        // }
+        FlutterTest.postMessage("hello user, channel called");
+    }
+    // setTimeout(callFlutterChannel, 30000);
+</script>
+</html>
